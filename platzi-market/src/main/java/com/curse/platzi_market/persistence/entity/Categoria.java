@@ -1,7 +1,6 @@
 package com.curse.platzi_market.persistence.entity;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
