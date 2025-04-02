@@ -5,6 +5,7 @@ import com.curse.platzi_market.domain.repository.ProductRepository;
 import com.curse.platzi_market.persistence.crud.ProductoCrudRepository;
 import com.curse.platzi_market.persistence.entity.Producto;
 import com.curse.platzi_market.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +13,10 @@ import java.util.Optional;
 @Repository
 public class ProductoRepository implements ProductRepository {
 
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
+
+    @Autowired
     private ProductMapper mapper;
 
     @Override
@@ -48,5 +52,4 @@ public class ProductoRepository implements ProductRepository {
     public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
-
 }

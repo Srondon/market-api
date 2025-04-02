@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Producto {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Genera el Id automaticamente según una secuencia
     private Integer idProducto;
 
     private String nombre;
@@ -28,7 +28,7 @@ public class Producto {
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", insertable = false, updatable = false) //Con esta relación NO se puede insertar o eliminar Categorias, unicamente desde la clase Categoria
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     public Integer getIdProducto() {
@@ -85,5 +85,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

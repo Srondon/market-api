@@ -8,21 +8,29 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    private Integer id;
+    private String id;
 
     private String nombre;
 
     private String apellidos;
 
-    private Integer celular;
+    private Long celular;
 
     private String direccion;
 
-    @Column(name = "correo_electronico")
+    @Column(name="correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -40,11 +48,11 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public Integer getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(Integer celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
     }
 
@@ -62,5 +70,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }
