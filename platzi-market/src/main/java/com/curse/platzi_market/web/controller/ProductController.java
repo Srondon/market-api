@@ -2,6 +2,8 @@ package com.curse.platzi_market.web.controller;
 
 import com.curse.platzi_market.domain.Product;
 import com.curse.platzi_market.domain.service.ProductService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

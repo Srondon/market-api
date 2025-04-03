@@ -20,6 +20,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.3.4'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
 
 	//Esto es para que únicamente se ejecute cuando está en ejecuciçón el proyecto.
 	runtimeOnly 'org.postgresql:postgresql:42.7.3'
